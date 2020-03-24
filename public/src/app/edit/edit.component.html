@@ -1,0 +1,17 @@
+
+<button [routerLink]="['/']">Home</button>
+<br>
+<br>
+
+<form (submit)="update()">
+    <input type="text" 
+    name="name"
+    required minlength="3"
+    [(ngModel)]='author.name'>
+    <p><input type="submit" value="Edit Author"></p>
+</form>
+<p><input type="submit" value="Cancel" (click)="reroute()"></p>
+
+<div *ngIf="error" id="error_message">
+    <p>{{error}}</p>
+</div>
